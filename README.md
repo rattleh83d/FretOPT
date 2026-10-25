@@ -4,7 +4,7 @@ A personal project built out of curiosity: is there a mathematically justified "
 
 I combined nearly a decade of playing experience across acoustic, electric, and bass guitar with a bit of mathematical reasoning and some coding to explore the question. The goal is not to replace taste or feel, but to test whether a compact optimization model can generate playable, efficient fingerings from musical input alone.
 
-> AI was used to help refactor code, help explore novel mathematical algorythms, and write tests during the early stages of the project. Future development is being written by hand as I continue learning and improving my programming skills. 
+> AI tools assisted early algorithm exploration, code refactoring, and test writing. I am continuing to develop the project while improving my programming skills.
 
 ## Main idea
 
@@ -30,9 +30,9 @@ This project is motivated by practical guitar playing, not abstract theory alone
 
 The goal is to see whether these choices can be described with a usable cost function and whether the result is genuinely helpful in real playing situations.
 
-FretOPT's real-world experience: 
-- used by professional band " Валентин Прекрасный " to extrapolate MIDI melodies to tabulatures
-- used by peer guitarists to test applicability
+Early use and feedback: 
+- used by the band "Валентин Прекрасный" for MIDI-derived melody-to-tablature workflows
+- tried by peer guitarists to explore practical applicability
 ## Technical overview
 
 **FretOpt** formulates monophonic guitar fingering generation as an exact shortest-path problem on a state-augmented DAG. Instead of treating transitions as memoryless point-to-point jumps in fret indices, FretOpt models physical fretboard geometry in millimeters, tracks a discretized palm reference coordinate, and penalizes within-position fret/string bounding envelopes.
@@ -40,7 +40,7 @@ FretOPT's real-world experience:
 ### Core formulation
 
 #### 1. Physical geometry
-{ NOTE: GUITAR MEASUREMENTS WERE TAKEN OFF MY OWN GUITAR, JACKSON KELLY}
+The guitar measurements used here were taken from my own Jackson Kelly.
 
 For a 6-string guitar in standard tuning with open-string pitches p_open = (64, 59, 55, 50, 45, 40), scale length L = 647.7 mm, and string spacing d_str = 7.0 mm, fret f in [0, 24] is mapped to its physical longitudinal coordinate:
 
@@ -73,7 +73,7 @@ C(q_(t-1), q_t) = C_state(q_t) + C_str(p_(t-1), p_t) + C_repo(c_(t-1), c_t) + C_
 
 | Model | Solver | State space | Description |
 | --- | --- | --- | --- |
-| **M0** | `solve_baseline(..., "M0")` | Position (s, f) | Exact Viterbi DP over Manhattan index distance |Delta f| + |Delta s| |
+| **M0** | `solve_baseline(..., "M0")` | Position (s, f) | Exact Viterbi DP over Manhattan index distance `abs(Delta f) + abs(Delta s)` |
 | **M1** | `solve_baseline(..., "M1")` | Position (s, f) | Exact Viterbi DP over 2D Euclidean distance in millimeters |
 | **M2** | `solve_greedy(...)` | 6-tuple `State` | Myopic step-wise greedy search over the full hand cost C |
 | **M3** | `solve_hand(...)` | 6-tuple `State` | Exact layered DP over C with shift-equivalence reduction |
@@ -113,3 +113,4 @@ python3 -m unittest -v test_fretopt.py
 - exploratory research project
 - personal project with practical guitar focus
 - still under active development
+
