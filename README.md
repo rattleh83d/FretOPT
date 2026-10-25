@@ -30,6 +30,9 @@ This project is motivated by practical guitar playing, not abstract theory alone
 
 The goal is to see whether these choices can be described with a usable cost function and whether the result is genuinely helpful in real playing situations.
 
+FretOPT's real-world experience: 
+- used by professional band " Валентин Прекрасный " to extrapolate MIDI melodies to tabulatures
+- used by peer guitarists to test applicability
 ## Technical overview
 
 **FretOpt** formulates monophonic guitar fingering generation as an exact shortest-path problem on a state-augmented DAG. Instead of treating transitions as memoryless point-to-point jumps in fret indices, FretOpt models physical fretboard geometry in millimeters, tracks a discretized palm reference coordinate, and penalizes within-position fret/string bounding envelopes.
@@ -37,7 +40,8 @@ The goal is to see whether these choices can be described with a usable cost fun
 ### Core formulation
 
 #### 1. Physical geometry
-{ NOTE: GUITAR MEASUREMENTS WERE TAKEN OFF MY OWN GUITAR, JACKSON KELLY} 
+{ NOTE: GUITAR MEASUREMENTS WERE TAKEN OFF MY OWN GUITAR, JACKSON KELLY}
+
 For a 6-string guitar in standard tuning with open-string pitches p_open = (64, 59, 55, 50, 45, 40), scale length L = 647.7 mm, and string spacing d_str = 7.0 mm, fret f in [0, 24] is mapped to its physical longitudinal coordinate:
 
 x(f) = L * (1 - 2^(-f / 12))
@@ -103,30 +107,6 @@ Run the unit and oracle verification suite (C^0 continuity, monotonicity, subadd
 ```bash
 python3 -m unittest -v test_fretopt.py
 ```
-
-## Further development
-
-This project is still evolving. I plan to keep refining and expanding it as I continue exploring the problem, because the field is broad and there is still plenty to test and improve.
-
-## Important note about LaTeX in GitHub READMEs
-
-GitHub's default Markdown renderer does not support LaTeX or MathJax in README files. That is why formulas may appear broken or as plain text when written with LaTeX syntax.
-
-For example, this type of math will not render correctly in a standard GitHub README:
-
-```tex
-\[
-\text{cost} = \sum_i w_i \cdot d_i
-\]
-```
-
-If you want proper mathematical rendering, you need a math-enabled environment such as:
-
-- GitHub Pages with MathJax
-- a docs site built with MkDocs / Jekyll / Hugo
-- a local Markdown viewer that supports LaTeX rendering
-
-For a GitHub README, the safest approach is to keep formulas as plain text or to move them to a math-enabled page.
 
 ## Current status
 
