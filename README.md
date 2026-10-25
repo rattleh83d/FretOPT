@@ -113,4 +113,3 @@ python3 -m unittest -v test_fretopt.py
 - exploratory research project
 - personal project with practical guitar focus
 - still under active development
-
