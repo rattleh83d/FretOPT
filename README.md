@@ -4,7 +4,7 @@ A personal project built out of curiosity: is there a mathematically justified "
 
 I combined nearly a decade of playing experience across acoustic, electric, and bass guitar with a bit of mathematical reasoning and some coding to explore the question. The goal is not to replace taste or feel, but to test whether a compact optimization model can generate playable, efficient fingerings from musical input alone.
 
-> AI was used to help refactor code and write tests during the early stages of the project. Future development is being written by hand as I continue learning and improving my programming skills.
+> AI was used to help refactor code, help explore novel mathematical algorythms, and write tests during the early stages of the project. Future development is being written by hand as I continue learning and improving my programming skills. 
 
 ## Main idea
 
@@ -37,7 +37,7 @@ The goal is to see whether these choices can be described with a usable cost fun
 ### Core formulation
 
 #### 1. Physical geometry
-
+{ NOTE: GUITAR MEASUREMENTS WERE TAKEN OFF MY OWN GUITAR, JACKSON KELLY} 
 For a 6-string guitar in standard tuning with open-string pitches p_open = (64, 59, 55, 50, 45, 40), scale length L = 647.7 mm, and string spacing d_str = 7.0 mm, fret f in [0, 24] is mapped to its physical longitudinal coordinate:
 
 x(f) = L * (1 - 2^(-f / 12))
