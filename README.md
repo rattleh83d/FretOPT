@@ -1,15 +1,61 @@
 # FretOPT
-**my personal project that I did out of curiosity. 
-the main question behind this: is there a mathematically proven BEST fingering pattern when playing guitar? 
-I used personal experience of 9yrs playing acoustic, electric, and bass guitars and humble mathematical knowledge paired with some coding to produce this.** 
 
-**AI was used to refactor and write some tests as I currently lack the skills required. All the later changes will be only hand-written as I develop my coding skills.** 
+A personal project built out of curiosity: is there a mathematically justified "best" fingering pattern for guitar?
 
-## MAIN IDEA AND REAL-LIFE APPLICATIONS:  
-leveraging my guitar experience , I developed the main principles and costs: moving ONLY fingers in <4 fret range is the cheapest option to get a note; moving your fingering hand upwards or downwards in <4 fret range is the second cheapest; moving BOTH hands in range >4 is the most expensive one in movecost terms.
+I combined nearly a decade of playing experience across acoustic, electric, and bass guitar with a bit of mathematical reasoning and some coding to explore the question. The goal is not to replace musical intuition, but to test whether movement cost and hand efficiency can be modeled and optimized.
 
-after I got the final version(15.10.2026), I went to my local guitar studio and offered my peers to use this and see if FretOPT was even useful; they used it on simple melodies that seemed too sophisticated and it proved itself useful on unrefined and "niche" applicatures. next, I texted a professional guitarist, who writes his own music, and offered him to review FretOPT. we met up and he used it to extrapolate some guitar ideas that were writen in a software in MIDI, and that's exactly what FretOPT is best for; he later said that it really helped him and saved a lot of time. 
-## FURTHER DEVELOPMENT:
-I will be updating and commiting more to this project as I find this problem really interesting and the field is not confined to any perticular goal. 
+> AI was used to help refactor code and write tests during the early stages of the project. Future development is being written by hand as I continue learning and improving my programming skills.
 
+## Main idea
 
+The core idea behind FretOPT is simple:
+
+- small finger movements are usually cheaper than large repositioning moves
+- keeping the hand within a narrow fret range can reduce strain and effort
+- fingering choices should account for both note selection and movement cost
+
+In other words, the project tries to model the tradeoff between:
+
+- choosing the most natural note
+- choosing the most efficient hand movement
+- keeping the result comfortable and playable in real life
+
+## Real-world application
+
+This project is motivated by practical guitar playing, not abstract theory alone. The model is meant to reflect how a guitarist actually moves while playing:
+
+- how often do you shift hand position?
+- does a small movement save more effort than a more "obvious" fingering?
+- can a better route be found by optimizing the hand path, not just the notes?
+
+The goal is to see whether these choices can be described with a usable cost function and whether the result is genuinely helpful in real playing situations.
+
+## Further development
+
+This project is still evolving. I plan to keep refining and expanding it as I continue exploring the problem, because the field is broad and there is still plenty to test and improve.
+
+## Important note about LaTeX in GitHub READMEs
+
+GitHub's default Markdown renderer does not support LaTeX or MathJax in README files. That is why formulas may appear broken or as plain text when written with LaTeX syntax.
+
+For example, this type of math will not render correctly in a standard GitHub README:
+
+```tex
+\[
+\text{cost} = \sum_i w_i \cdot d_i
+\]
+```
+
+If you want proper mathematical rendering, you need a math-enabled environment such as:
+
+- GitHub Pages with MathJax
+- a docs site built with MkDocs / Jekyll / Hugo
+- a local Markdown viewer that supports LaTeX rendering
+
+For a GitHub README, the safest approach is to keep formulas as plain text or to move them to a math-enabled page.
+
+## Current status
+
+- exploratory research project
+- personal project with practical guitar focus
+- still under active development
