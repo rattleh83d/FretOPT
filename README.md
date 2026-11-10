@@ -4,7 +4,13 @@ A personal project built out of curiosity: is there a mathematically justified "
 
 I combined nearly a decade of playing experience across acoustic, electric, and bass guitar with a bit of mathematical reasoning and some coding to explore the question. The goal is not to replace taste or feel, but to test whether a compact optimization model can generate playable, efficient fingerings from musical input alone.
 
-> AI tools assisted early algorithm exploration, code refactoring, and test writing. I am continuing to develop the project while improving my programming skills.
+> ## Development process and AI assistance
+
+I developed the project’s core logic and structure, proposed using physical fretboard measurements to model movement, and defined the main modeling assumptions.
+
+Development was iterative: I decided what the program should do next and described the intended behavior, then used AI to help correctly translate those decisions into Python. After each addition, I worked through the implementation until I understood how it worked and how it connected to the rest of the program before moving on. This made development a learning process as well as a way to build the tool.
+
+AI contributed help with implementation, refactoring, pushing to github, and automated tests. The project reflects my ideas and design decisions, but I do not claim to have written every line of code independently.
 
 ## Main idea
 
@@ -57,6 +63,8 @@ and treats open strings using the same geometry as fretted notes.
 
 Use `--json result.json` to export results, `--positions 1:0 1:2 1:5 1:3`
 to pin positions, and `--config config.json` to configure the experimental models.
+
+
 
 ## Checks
 
