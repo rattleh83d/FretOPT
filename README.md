@@ -6,11 +6,11 @@ I combined nearly a decade of playing experience across acoustic, electric, and 
 
 > ## Development process and AI assistance
 
-I developed the project’s core logic and structure, proposed using physical fretboard measurements to model movement, and defined the main modeling assumptions.
+>I developed the project’s core logic and structure, proposed using physical fretboard measurements to model movement, and defined the main modeling assumptions.
 
-Development was iterative: I decided what the program should do next and described the intended behavior, then used AI to help correctly translate those decisions into Python. After each addition, I worked through the implementation until I understood how it worked and how it connected to the rest of the program before moving on. This made development a learning process as well as a way to build the tool.
+>Development was iterative: I decided what the program should do next and described the intended behavior, then used AI to help correctly translate those decisions into Python. After each addition, I worked through the implementation until I understood how it worked and how it connected to the rest of the program before moving on. This made development a learning process as well as a way to build the tool.
 
-AI contributed help with implementation, refactoring, pushing to github, and automated tests. The project reflects my ideas and design decisions, but I do not claim to have written every line of code independently.
+>AI contributed help with implementation, refactoring, pushing to github, and automated tests. The project reflects my ideas and design decisions, but I do not claim to have written every line of code independently.
 
 ## Main idea
 
