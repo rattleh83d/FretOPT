@@ -1,0 +1,18 @@
+{
+  "scale_length_mm": 647.7,
+  "string_spacing_mm": 7.0,
+  "comfortable_span_mm": 55.0,
+  "hard_stretch_mm": 85.0,
+  "palm_grid_mm": 5.0,
+  "comfortable_cost": 0.03,
+  "extended_weight": 0.8,
+  "comfortable_power": 2.0,
+  "extended_power": 2.0,
+  "adjacent_string_cost": 0.02,
+  "multi_string_base_cost": 0.06,
+  "multi_string_slope": 0.02,
+  "string_span_modifier": 0.15,
+  "reposition_base_cost": 1.5,
+  "reposition_distance_weight": 0.01,
+  "note_distance_weight": 0.005
+}
